@@ -101,9 +101,20 @@
   background: transparent;
 }
 
+@media (hover: hover) {
+
 .app-table__head [data-slot="table-row"],
 .app-table__head [data-slot="table-row"]:hover {
   background: transparent;
+}
+}
+
+@media (hover: none) {
+
+.app-table__head [data-slot="table-row"],
+.app-table__head [data-slot="table-row"]:active {
+  background: transparent;
+}
 }
 
 .app-table__head-content {
@@ -145,9 +156,20 @@
     transform 160ms ease;
 }
 
+@media (hover: hover) {
+
 .app-table__head [data-slot="table-head"]:hover .app-table__sort-trigger,
 .app-table__sort-trigger[data-active="true"] {
   opacity: 1;
+}
+}
+
+@media (hover: none) {
+
+.app-table__head [data-slot="table-head"]:active .app-table__sort-trigger,
+.app-table__sort-trigger[data-active="true"] {
+  opacity: 1;
+}
 }
 
 .app-table__sort-trigger[data-active="true"] {
@@ -268,12 +290,26 @@
   --app-table-cell-base: var(--app-table-zebra);
 }
 
+@media (hover: hover) {
+
 .app-table__table--body
   [data-slot="table-body"]
   > .app-table__row:hover
   > [data-slot="table-cell"] {
   --app-table-cell-state: var(--table-hover-current);
   --app-table-cell-state-inset-block: var(--app-table-hover-state-inset-block);
+}
+}
+
+@media (hover: none) {
+
+.app-table__table--body
+  [data-slot="table-body"]
+  > .app-table__row:active
+  > [data-slot="table-cell"] {
+  --app-table-cell-state: var(--table-hover-current);
+  --app-table-cell-state-inset-block: var(--app-table-hover-state-inset-block);
+}
 }
 
 .app-table__table--body

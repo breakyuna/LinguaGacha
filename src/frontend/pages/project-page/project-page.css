@@ -143,12 +143,26 @@
     box-shadow 180ms ease;
 }
 
+@media (hover: hover) {
+
 .project-home__dropzone:hover,
 .project-home__dropzone:focus-visible,
 .project-home__dropzone[data-drag-active="true"] {
   border-color: var(--project-home-interactive);
   background: var(--project-home-interactive-bg);
   box-shadow: none;
+}
+}
+
+@media (hover: none) {
+
+.project-home__dropzone:active,
+.project-home__dropzone:focus-visible,
+.project-home__dropzone[data-drag-active="true"] {
+  border-color: var(--project-home-interactive);
+  background: var(--project-home-interactive-bg);
+  box-shadow: none;
+}
 }
 
 .project-home__dropzone--source,
@@ -161,12 +175,26 @@
   color: var(--project-home-project);
 }
 
+@media (hover: hover) {
+
 .project-home__selected-card:hover,
 .project-home__selected-card:focus-within,
 .project-home__selected-card[data-drag-active="true"] {
   border-color: var(--project-home-interactive);
   background: var(--project-home-interactive-bg);
   box-shadow: none;
+}
+}
+
+@media (hover: none) {
+
+.project-home__selected-card:active,
+.project-home__selected-card:focus-within,
+.project-home__selected-card[data-drag-active="true"] {
+  border-color: var(--project-home-interactive);
+  background: var(--project-home-interactive-bg);
+  box-shadow: none;
+}
 }
 
 .project-home__dropzone-icon,
@@ -323,9 +351,20 @@
   transition: background-color 180ms ease;
 }
 
+@media (hover: hover) {
+
 .project-home__recent-row:hover,
 .project-home__recent-row:focus-within {
   background: color-mix(in srgb, var(--project-home-hover) 72%, transparent);
+}
+}
+
+@media (hover: none) {
+
+.project-home__recent-row:active,
+.project-home__recent-row:focus-within {
+  background: color-mix(in srgb, var(--project-home-hover) 72%, transparent);
+}
 }
 
 .project-home__recent-main {
@@ -372,10 +411,22 @@
     background-color 180ms ease;
 }
 
+@media (hover: hover) {
+
 .project-home__recent-row:hover .project-home__recent-remove,
 .project-home__recent-row:focus-within .project-home__recent-remove {
   opacity: 1;
   pointer-events: auto;
+}
+}
+
+@media (hover: none) {
+
+.project-home__recent-row:active .project-home__recent-remove,
+.project-home__recent-row:focus-within .project-home__recent-remove {
+  opacity: 1;
+  pointer-events: auto;
+}
 }
 
 .project-home__selected-content {

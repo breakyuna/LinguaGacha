@@ -180,8 +180,18 @@
   color: var(--muted-foreground);
 }
 
+@media (hover: hover) {
+
 .log-window-page__detail-action:hover {
   color: var(--foreground);
+}
+}
+
+@media (hover: none) {
+
+.log-window-page__detail-action:active {
+  color: var(--foreground);
+}
 }
 
 .log-window-page__detail-editor {

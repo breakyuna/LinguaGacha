@@ -38,24 +38,54 @@
   color: var(--muted-foreground);
 }
 
+@media (hover: hover) {
+
 .search-bar__clear-button:hover {
   color: var(--foreground);
+}
+}
+
+@media (hover: none) {
+
+.search-bar__clear-button:active {
+  color: var(--foreground);
+}
 }
 
 .search-bar__invalid-button {
   color: var(--ui-failure);
 }
 
+@media (hover: hover) {
+
 .search-bar__invalid-button:hover {
   color: color-mix(in srgb, var(--ui-failure) 88%, var(--foreground) 12%);
+}
+}
+
+@media (hover: none) {
+
+.search-bar__invalid-button:active {
+  color: color-mix(in srgb, var(--ui-failure) 88%, var(--foreground) 12%);
+}
 }
 
 .search-bar__replace-button {
   color: color-mix(in srgb, var(--foreground) 62%, var(--muted-foreground) 38%);
 }
 
+@media (hover: hover) {
+
 .search-bar__replace-button:hover {
   color: var(--foreground);
+}
+}
+
+@media (hover: none) {
+
+.search-bar__replace-button:active {
+  color: var(--foreground);
+}
 }
 
 .search-bar__invalid-tooltip {

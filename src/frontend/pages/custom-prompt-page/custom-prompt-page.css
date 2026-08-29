@@ -36,11 +36,24 @@
     box-shadow 180ms ease;
 }
 
+@media (hover: hover) {
+
 .custom-prompt-page__readonly-strip:hover,
 .custom-prompt-page__readonly-strip:focus-visible {
   border-color: color-mix(in srgb, var(--border) 68%, var(--primary) 32%);
   background: color-mix(in srgb, var(--muted) 42%, var(--popover) 58%);
   outline: none;
+}
+}
+
+@media (hover: none) {
+
+.custom-prompt-page__readonly-strip:active,
+.custom-prompt-page__readonly-strip:focus-visible {
+  border-color: color-mix(in srgb, var(--border) 68%, var(--primary) 32%);
+  background: color-mix(in srgb, var(--muted) 42%, var(--popover) 58%);
+  outline: none;
+}
 }
 
 .custom-prompt-page__readonly-strip-label {

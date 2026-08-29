@@ -143,14 +143,36 @@
     color 120ms ease;
 }
 
+@media (hover: hover) {
+
 .agent-page__suggestion:hover {
   background: var(--accent);
   color: var(--foreground);
 }
+}
+
+@media (hover: none) {
+
+.agent-page__suggestion:active {
+  background: var(--accent);
+  color: var(--foreground);
+}
+}
+
+@media (hover: hover) {
 
 .agent-page__suggestion:hover .agent-page__suggestion-icon,
 .agent-page__suggestion:focus-visible .agent-page__suggestion-icon {
   color: var(--primary);
+}
+}
+
+@media (hover: none) {
+
+.agent-page__suggestion:active .agent-page__suggestion-icon,
+.agent-page__suggestion:focus-visible .agent-page__suggestion-icon {
+  color: var(--primary);
+}
 }
 
 .agent-page__suggestion:active {
@@ -278,8 +300,18 @@
   white-space: nowrap;
 }
 
+@media (hover: hover) {
+
 .agent-continue-entry:hover:not(:disabled) {
   background: color-mix(in srgb, var(--ui-failure) 9%, var(--card));
+}
+}
+
+@media (hover: none) {
+
+.agent-continue-entry:active:not(:disabled) {
+  background: color-mix(in srgb, var(--ui-failure) 9%, var(--card));
+}
 }
 
 .agent-continue-entry:active:not(:disabled) {
@@ -429,9 +461,20 @@
   padding: 0 8px;
 }
 
+@media (hover: hover) {
+
 .agent-attachment:hover:not(:disabled) {
   border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
   background: var(--accent);
+}
+}
+
+@media (hover: none) {
+
+.agent-attachment:active:not(:disabled) {
+  border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
+  background: var(--accent);
+}
 }
 
 .agent-attachment:focus-visible {
@@ -488,10 +531,22 @@
     color 120ms ease;
 }
 
+@media (hover: hover) {
+
 .agent-tool-entry:hover,
 .agent-tool-entry:focus-visible {
   background: var(--accent);
   color: var(--foreground);
+}
+}
+
+@media (hover: none) {
+
+.agent-tool-entry:active,
+.agent-tool-entry:focus-visible {
+  background: var(--accent);
+  color: var(--foreground);
+}
 }
 
 .agent-tool-entry:focus-visible {
@@ -567,9 +622,20 @@
   transform: rotate(90deg);
 }
 
+@media (hover: hover) {
+
 .agent-thinking-entry__toggle:hover {
   background: var(--accent);
   color: var(--foreground);
+}
+}
+
+@media (hover: none) {
+
+.agent-thinking-entry__toggle:active {
+  background: var(--accent);
+  color: var(--foreground);
+}
 }
 
 .agent-thinking-entry__toggle:focus-visible {
@@ -828,11 +894,24 @@
   min-width: 0;
 }
 
+@media (hover: hover) {
+
 .agent-task-progress:hover,
 .agent-task-progress:focus-visible,
 .agent-input-queue__item:not(.agent-input-queue__item--editing):hover,
 .agent-input-queue__item:not(.agent-input-queue__item--editing):focus-within {
   background: var(--accent);
+}
+}
+
+@media (hover: none) {
+
+.agent-task-progress:active,
+.agent-task-progress:focus-visible,
+.agent-input-queue__item:not(.agent-input-queue__item--editing):active,
+.agent-input-queue__item:not(.agent-input-queue__item--editing):focus-within {
+  background: var(--accent);
+}
 }
 
 .agent-task-progress {
@@ -970,10 +1049,22 @@
   cursor: grab;
 }
 
+@media (hover: hover) {
+
 .agent-input-queue__drag:hover:not(:disabled),
 .agent-input-queue__drag:focus-visible {
   color: var(--secondary-foreground);
   opacity: 1;
+}
+}
+
+@media (hover: none) {
+
+.agent-input-queue__drag:active:not(:disabled),
+.agent-input-queue__drag:focus-visible {
+  color: var(--secondary-foreground);
+  opacity: 1;
+}
 }
 
 .agent-input-queue__drag:focus-visible {
@@ -1018,9 +1109,20 @@
   color: var(--muted-foreground);
 }
 
+@media (hover: hover) {
+
 .agent-input-queue__actions button:hover,
 .agent-input-queue__actions button:focus-visible {
   color: var(--foreground);
+}
+}
+
+@media (hover: none) {
+
+.agent-input-queue__actions button:active,
+.agent-input-queue__actions button:focus-visible {
+  color: var(--foreground);
+}
 }
 
 .agent-input-queue__actions button[aria-busy="true"] {
@@ -1104,8 +1206,18 @@
   color: var(--primary);
 }
 
+@media (hover: hover) {
+
 .agent-page__follow-control[aria-pressed="true"]:hover {
   color: var(--primary);
+}
+}
+
+@media (hover: none) {
+
+.agent-page__follow-control[aria-pressed="true"]:active {
+  color: var(--primary);
+}
 }
 
 .agent-operation-surface:focus-within {
@@ -1509,9 +1621,20 @@
   user-select: text;
 }
 
+@media (hover: hover) {
+
 .agent-mention-menu button:hover,
 .agent-mention-menu button[data-highlight="true"] {
   background: var(--accent);
+}
+}
+
+@media (hover: none) {
+
+.agent-mention-menu button:active,
+.agent-mention-menu button[data-highlight="true"] {
+  background: var(--accent);
+}
 }
 
 .agent-mention-menu button:focus-visible {

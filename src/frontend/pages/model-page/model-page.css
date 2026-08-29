@@ -101,9 +101,20 @@
   transform: translateY(-50%);
 }
 
+@media (hover: hover) {
+
 .model-page__drag-handle:hover {
   background: transparent;
   color: color-mix(in srgb, var(--foreground) 88%, transparent);
+}
+}
+
+@media (hover: none) {
+
+.model-page__drag-handle:active {
+  background: transparent;
+  color: color-mix(in srgb, var(--foreground) 88%, transparent);
+}
 }
 
 .model-page__drag-handle:active {
@@ -289,8 +300,18 @@
     color 180ms ease;
 }
 
+@media (hover: hover) {
+
 .model-page__selector-item:hover {
   background: color-mix(in srgb, var(--popover) 80%, var(--muted) 20%);
+}
+}
+
+@media (hover: none) {
+
+.model-page__selector-item:active {
+  background: color-mix(in srgb, var(--popover) 80%, var(--muted) 20%);
+}
 }
 
 .model-page__selector-item:focus-visible {

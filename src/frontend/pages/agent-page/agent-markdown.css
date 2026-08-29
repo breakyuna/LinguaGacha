@@ -108,8 +108,18 @@
   text-underline-offset: 2px;
 }
 
+@media (hover: hover) {
+
 .agent-markdown a:hover {
   text-decoration-color: currentcolor;
+}
+}
+
+@media (hover: none) {
+
+.agent-markdown a:active {
+  text-decoration-color: currentcolor;
+}
 }
 
 .agent-markdown a:focus-visible {
@@ -314,8 +324,18 @@
   cursor: zoom-in;
 }
 
+@media (hover: hover) {
+
 .agent-markdown__diagram-trigger:hover {
   background: var(--accent);
+}
+}
+
+@media (hover: none) {
+
+.agent-markdown__diagram-trigger:active {
+  background: var(--accent);
+}
 }
 
 .agent-markdown__diagram-trigger:focus-visible {
