@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "types": ["react", "react-dom", "node"],
+    "jsxImportSource": "react",
     "allowImportingTsExtensions": true,
     "erasableSyntaxOnly": true,
     "isolatedModules": true,
@@ -39,6 +41,7 @@
     "src/gui/gui-ipc-contract.ts",
     "src/gui/shell/external-url-policy.ts",
     "src/gui/shell/shell-contract.ts",
-    "src/shared"
+    "src/shared",
+    "src/frontend/vite-env.d.ts"
   ]
 }

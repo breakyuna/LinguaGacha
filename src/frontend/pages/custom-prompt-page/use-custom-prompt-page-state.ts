@@ -144,9 +144,8 @@ export function useCustomPromptPageState(
     }
 
     try {
-      const pick_result = await window.desktopApp.pickPromptImportFilePath();
-      const selected_path = pick_result.paths[0] ?? null;
-      if (pick_result.canceled || selected_path === null) {
+            const selected_path = null;
+      if (selected_path === null) {
         return;
       }
 
@@ -165,9 +164,9 @@ export function useCustomPromptPageState(
 
   const export_prompt_from_picker = useCallback(async (): Promise<void> => {
     try {
-      const pick_result = await window.desktopApp.pickPromptExportFilePath();
-      const selected_path = pick_result.paths[0] ?? null;
-      if (pick_result.canceled || selected_path === null) {
+      throw new Error("Not supported in web mode"); // const pick_result = await window.desktopApp.pickPromptExportFilePath();
+      const selected_path = null;
+      if (selected_path === null) {
         return;
       }
 

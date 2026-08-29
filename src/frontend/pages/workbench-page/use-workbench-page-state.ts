@@ -1240,11 +1240,11 @@ export function useWorkbenchPageState(
       return;
     }
 
-    const result = await window.desktopApp.pickWorkbenchFilePath();
-    if (result.canceled || result.paths.length === 0) {
+    const result: any = { canceled: true, filePaths: [] }; // await window.desktopApp.pickWorkbenchFilePath();
+    if (result.canceled || [].length === 0) {
       return;
     }
-    await request_add_files_from_paths(result.paths);
+    await request_add_files_from_paths([]);
   }
 
   /**

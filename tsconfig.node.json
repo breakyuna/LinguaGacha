@@ -11,7 +11,7 @@
     "target": "ES2023",
     "tsBuildInfoFile": "./build/tsconfig.node.tsbuildinfo",
     "verbatimModuleSyntax": true,
-    "types": ["electron-vite/node"]
+    "types": ["node", "react", "react-dom"]
   },
   "include": [
     "buildtools/vite/*.ts",
@@ -19,8 +19,8 @@
     "src/backend",
     "src/cli",
     "src/domain",
-    "src/electron-env.d.ts",
     "src/gui",
+    "src/web-entry.ts",
     "src/index.ts",
     "src/native",
     "src/shared",

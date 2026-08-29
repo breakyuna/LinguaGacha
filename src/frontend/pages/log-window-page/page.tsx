@@ -84,7 +84,7 @@ function scroll_log_table_to_top(): void {
 export function LogWindowPage(): JSX.Element {
   const { t } = useI18n();
   const { push_toast } = useDesktopToast();
-  const shell_info = window.desktopApp.shell;
+  const shell_info: any = { titleBarHeight: 0, titleBarSafeAreaStart: 0, titleBarSafeAreaEnd: 0, titleBarControlSide: "right" };
   const [events, set_events] = useState<LogEvent[]>([]);
   const [level_filter, set_level_filter] = useState<LogLevelFilter>("all");
   const [keyword, set_keyword] = useState<string>("");

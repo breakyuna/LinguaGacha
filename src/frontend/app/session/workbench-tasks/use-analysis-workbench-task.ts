@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEventCallback as useEffectEvent } from "../../../widgets/interactions/use-event-callback";
 
 import { api_fetch } from "@frontend/app/desktop/desktop-api";
 import { type QualityRuleImportAction } from "@shared/quality/quality-rule-import";

@@ -1,5 +1,3 @@
-import { app, session } from "electron";
-
 import { BackendBootstrap } from "../backend/bootstrap/backend-bootstrap";
 import { run_cli_job } from "./job/cli-job-runner";
 import type { CLICommandOptions } from "./cli-parser";
@@ -15,13 +13,12 @@ export async function run_cli_command(
   command: CLICommandOptions,
   worker_execution: BackendWorkerExecution,
 ): Promise<void> {
-  await app.whenReady();
   const bootstrap = new BackendBootstrap({
     appRoot: app_root,
     exposeApiGateway: false,
     logTargets: { console: false, window: false },
     systemProxyResolver: {
-      resolveProxy: (url) => session.defaultSession.resolveProxy(url),
+      resolveProxy: async (_url) => { return "DIRECT"; },
     },
     openOutputFolder: async () => undefined,
     workerExecution: worker_execution,

@@ -44,16 +44,6 @@ export function resolve_dropped_paths(data_transfer: DataTransfer): DroppedPathR
   const dropped_files = Array.from(data_transfer.files);
   if (dropped_files.length > 0) {
     const normalized_file_paths: string[] = [];
-    for (const dropped_file of dropped_files) {
-      try {
-        const normalized_file_path = window.desktopApp.getPathForFile(dropped_file);
-        if (normalized_file_path !== "") {
-          normalized_file_paths.push(normalized_file_path);
-        }
-      } catch {
-        // 某些拖拽源不会暴露本地路径，这里继续回退到 text/uri-list
-      }
-    }
     if (normalized_file_paths.length > 0) {
       return {
         path: normalized_file_paths[0] ?? null,

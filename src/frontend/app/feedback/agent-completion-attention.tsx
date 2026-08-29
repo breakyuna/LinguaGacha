@@ -59,7 +59,7 @@ export function AgentCompletionAttention(): null {
     });
     was_running_ref.current = transition.was_running;
     if (transition.should_request) {
-      window.desktopApp.requestUserAttention();
+
     }
   }, [entries, state]);
 

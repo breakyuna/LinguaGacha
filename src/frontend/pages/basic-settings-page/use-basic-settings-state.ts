@@ -239,11 +239,8 @@ export function useBasicSettingsState(): UseBasicSettingsStateResult {
 
       if (next_mode === "FIXED") {
         try {
-          const result = await window.desktopApp.pickFixedProjectDirectory(
-            snapshot.project_fixed_path,
-          );
-          const selected_path = result.paths[0] ?? "";
-          if (result.canceled || selected_path === "") {
+                    const selected_path = "";
+          if (selected_path === "") {
             return;
           }
 

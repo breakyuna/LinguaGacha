@@ -53,8 +53,7 @@ export async function import_quality_rule_entries<TType extends QualityRuleType>
 
 /** 使用质量规则页共用的系统文件选择器读取导入路径。 */
 export async function pick_quality_rule_import_path(): Promise<string | null> {
-  const result = await window.desktopApp.pickGlossaryImportFilePath();
-  return result.canceled ? null : (result.paths[0] ?? null);
+    return null;
 }
 
 /** 选择导出路径并提交当前页面规则；取消选择不视为导出成功。 */
@@ -63,8 +62,8 @@ export async function export_quality_rule_entries<TType extends QualityRuleType>
   file_name: string;
   entries: QualityRuleEntryByType[TType][];
 }): Promise<boolean> {
-  const result = await window.desktopApp.pickGlossaryExportPath(args.file_name);
-  const path = result.canceled ? null : (result.paths[0] ?? null);
+  throw new Error("Not supported in web mode"); // const result = await window.desktopApp.pickGlossaryExportPath(args.file_name);
+  const path = null;
   if (path === null) {
     return false;
   }

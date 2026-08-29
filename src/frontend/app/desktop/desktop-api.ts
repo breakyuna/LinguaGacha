@@ -154,7 +154,7 @@ function create_network_error(path: string, cause: unknown): DesktopApiError {
 }
 
 function read_backend_api_base_url(): string {
-  const base_url = normalize_backend_api_base_url(window.desktopApp.backendApi.baseUrl);
+  const base_url = normalize_backend_api_base_url(window.location.origin);
 
   if (base_url === "") {
     throw DesktopApiError.local("missing_backend_api_base_url");
@@ -604,5 +604,5 @@ export async function read_log_detail(id: string): Promise<LogDetail | null> {
 
 /** 外链不做应用级判断或改写，原样交给桌面宿主。 */
 export async function open_external_url(url: string): Promise<void> {
-  await window.desktopApp.openExternalUrl(url);
+  window.open(url, "_blank");
 }
