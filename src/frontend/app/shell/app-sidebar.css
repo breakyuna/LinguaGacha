@@ -137,12 +137,32 @@
   z-index: 2;
 }
 
+@media (hover: hover) {
+
 .sidebar-item:hover {
   color: var(--sidebar-foreground);
 }
+}
+
+@media (hover: none) {
+
+.sidebar-item:active {
+  color: var(--sidebar-foreground);
+}
+}
+
+@media (hover: hover) {
 
 .sidebar-item:hover::after {
   opacity: 1;
+}
+}
+
+@media (hover: none) {
+
+.sidebar-item:active::after {
+  opacity: 1;
+}
 }
 
 .sidebar-item--active {
@@ -173,8 +193,18 @@
   opacity: 1;
 }
 
+@media (hover: hover) {
+
 .sidebar-item--parent-active:not(.sidebar-item--active):hover::after {
   background: color-mix(in srgb, var(--sidebar-accent) 88%, transparent);
+}
+}
+
+@media (hover: none) {
+
+.sidebar-item--parent-active:not(.sidebar-item--active):active::after {
+  background: color-mix(in srgb, var(--sidebar-accent) 88%, transparent);
+}
 }
 
 .sidebar-item__icon {
@@ -308,12 +338,32 @@
   z-index: 2;
 }
 
+@media (hover: hover) {
+
 .sidebar-subitem:hover {
   color: var(--sidebar-foreground);
 }
+}
+
+@media (hover: none) {
+
+.sidebar-subitem:active {
+  color: var(--sidebar-foreground);
+}
+}
+
+@media (hover: hover) {
 
 .sidebar-subitem:hover::after {
   opacity: 1;
+}
+}
+
+@media (hover: none) {
+
+.sidebar-subitem:active::after {
+  opacity: 1;
+}
 }
 
 .sidebar-subitem--active::before {
@@ -437,9 +487,20 @@
   box-shadow: 0 0 0 2px var(--sidebar);
 }
 
+@media (hover: hover) {
+
 .sidebar-bottom-button:hover::after,
 .sidebar-profile:hover::after {
   opacity: 1;
+}
+}
+
+@media (hover: none) {
+
+.sidebar-bottom-button:active::after,
+.sidebar-profile:active::after {
+  opacity: 1;
+}
 }
 
 .sidebar-profile--update {

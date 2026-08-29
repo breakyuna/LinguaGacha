@@ -2,6 +2,19 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@custom-variant hover {
+  @media (hover: hover) {
+    &:hover {
+      @slot;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      @slot;
+    }
+  }
+}
+
 @font-face {
   font-family: "LGMono";
   src: url("/fonts/MonaspaceNeon.woff2") format("woff2");
@@ -433,12 +446,32 @@ a,
     cursor: pointer;
   }
 
+  @media (hover: hover){
+
   [data-slot="card"][data-interactive="true"]:hover {
     box-shadow: var(--card-shadow-hover-current);
   }
+  }
+
+  @media (hover: none){
+
+  [data-slot="card"][data-interactive="true"]:active {
+    box-shadow: var(--card-shadow-hover-current);
+  }
+  }
+
+  @media (hover: hover){
 
   [data-slot="card"][data-interactive="true"]:hover::after {
     border-color: var(--card-border-hover-current);
+  }
+  }
+
+  @media (hover: none){
+
+  [data-slot="card"][data-interactive="true"]:active::after {
+    border-color: var(--card-border-hover-current);
+  }
   }
 
   [data-slot="card"][data-interactive="true"]:active {
@@ -505,8 +538,18 @@ a,
     border-bottom: 1px solid var(--table-divider-current);
   }
 
+  @media (hover: hover){
+
   [data-slot="table-body"] > [data-slot="table-row"]:hover > [data-slot="table-cell"] {
     background: var(--table-hover-current);
+  }
+  }
+
+  @media (hover: none){
+
+  [data-slot="table-body"] > [data-slot="table-row"]:active > [data-slot="table-cell"] {
+    background: var(--table-hover-current);
+  }
   }
 
   [data-slot="table-body"]
