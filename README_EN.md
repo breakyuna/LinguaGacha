@@ -20,6 +20,45 @@
 
 > <img width="2570" height="1605" alt="02" src="https://github.com/user-attachments/assets/7f6d6556-d6b2-4fb1-b509-2d8272814290" />
 
+## How to Run 🚀
+
+Download the version suitable for your platform from the [Releases page](https://github.com/neavo/LinguaGacha/releases) to run directly. It is also supported on mobile devices via Termux.
+
+### Windows
+- Download `*_Windows_x64.zip` or `*_Windows_arm64.zip` according to your CPU type
+- Extract it and double-click `app.exe` to launch
+
+### macOS
+- Download `*_macOS_x64.dmg` or `*_macOS_arm64.dmg` according to your CPU type
+- Drag it to the Applications folder, **but do not launch it yet**
+- Open Terminal, enter `sudo xattr -rd com.apple.quarantine /Applications/LinguaGacha.app`, then press Enter
+- Enter your system password, close Terminal, and you can now launch it normally
+
+### Linux
+- Download `*_Linux_x64.AppImage` or `*_Linux_arm64.AppImage` according to your CPU type
+- Add executable permission: `chmod +x LinguaGacha*.AppImage`
+- Run: `./LinguaGacha*.AppImage`
+
+### Android (Termux)
+Thanks to its web-based architecture, you can run the LinguaGacha service directly in Termux on Android devices and use it in your mobile browser:
+1. Download and install [Termux](https://f-droid.org/packages/com.termux/) from F-Droid.
+2. Open Termux and install necessary dependencies (Node.js and Git):
+   ```bash
+   pkg update && pkg upgrade
+   pkg install git nodejs
+   ```
+3. Clone this project repository and navigate into the directory:
+   ```bash
+   git clone https://github.com/neavo/LinguaGacha.git
+   cd LinguaGacha
+   ```
+4. Install dependencies and start the development server:
+   ```bash
+   npm install
+   npm run dev
+   ```
+5. Once started, open your mobile browser and access the local address displayed in the terminal (usually `http://127.0.0.1:5173`) to use LinguaGacha.
+
 ## Special Notice ⚠️
 - If you use [LinguaGacha](https://github.com/neavo/LinguaGacha) during translation, please include clear attribution in prominent locations of your work's information or release pages!
 - For projects involving commercial activities or profits, please contact the author for authorization before using [LinguaGacha](https://github.com/neavo/LinguaGacha)!
@@ -32,34 +71,6 @@
 - The strongest style and code retention capability among similar applications, significantly reducing post-processing workload, making it the best choice for creating embedded Chinese localization.
   - `.md` `.ass` `.epub` formats can almost retain all original styles.
   - Most `WOLF`, `RenPy`, `RPGMaker`, `Kirikiri` games require no manual processing, allowing for instant translation and play
-
-## Basic Workflow 🛸
-- Download application from [Releases page](https://github.com/neavo/LinguaGacha/releases)
-  - Windows:
-    - Download `*_Windows_x64.zip` or `*_Windows_arm64.zip` according to your CPU type
-    - Extract it and double-click `app.exe` to launch
-  - macOS:
-    - Download `*_macOS_x64.dmg` or `*_macOS_arm64.dmg` according to your CPU type
-    - Drag it to the Applications folder, but do not launch it yet
-    - Open Terminal, enter `sudo xattr -rd com.apple.quarantine /Applications/LinguaGacha.app`, then press Enter
-    - Enter your system password, close Terminal, and you can launch it normally
-  - Linux:
-    - Download `*_Linux_x64.AppImage` or `*_Linux_arm64.AppImage` according to your CPU type
-    - Add executable permission with `chmod +x LinguaGacha*.AppImage`
-    - Run `./LinguaGacha*.AppImage`
-- Obtain a reliable AI model interface (choose one):
-  - [ [Local API](https://github.com/neavo/OneClickLLAMA) ] (Free, requires ≥8GB VRAM GPU, Nvidia recommended)
-  - [ [DeepSeek API](https://github.com/neavo/LinguaGacha/wiki/DeepSeek) ] (Cheapest, fast, high-quality, no GPU required)
-- Prepare source text:
-  - `Subtitles`/`E-books` typically require no preprocessing
-  - `Game texts` need extraction using appropriate tools for specific game engines
-- Launch the application:
-  - Drag the `files to translate` onto the page to create a project
-  - Configure the model you want to use in `Model Management`
-  - Configure essential information such as source and target languages in `Basic Settings`
-  - Select a model in `AGENT` to automatically extract the glossary
-  - Select the model and run `Translation` in `Workbench` to complete the translation
-  - Enjoy!
 
 ## User Guide 📝
 - Overall

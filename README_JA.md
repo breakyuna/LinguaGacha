@@ -19,6 +19,45 @@
 
 > <img width="2570" height="1605" alt="02" src="https://github.com/user-attachments/assets/7f6d6556-d6b2-4fb1-b509-2d8272814290" />
 
+## 実行方法 🚀
+
+[リリースページ](https://github.com/neavo/LinguaGacha/releases) からプラットフォームに合ったバージョンをダウンロードして直接実行できます。スマートフォンからTermuxを使用して実行することもサポートされています。
+
+### Windows
+- CPU の種類に応じて `*_Windows_x64.zip` または `*_Windows_arm64.zip` をダウンロード
+- 解凍して `app.exe` をダブルクリックして起動
+
+### macOS
+- CPU の種類に応じて `*_macOS_x64.dmg` または `*_macOS_arm64.dmg` をダウンロード
+- アプリケーションフォルダにドラッグし、**まだ起動しないでください**
+- ターミナルを開き、`sudo xattr -rd com.apple.quarantine /Applications/LinguaGacha.app` と入力して Enter を押してください
+- システムパスワードを入力し、ターミナルを閉じると、通常通り起動できます
+
+### Linux
+- CPU の種類に応じて `*_Linux_x64.AppImage` または `*_Linux_arm64.AppImage` をダウンロード
+- 実行権限を付与: `chmod +x LinguaGacha*.AppImage`
+- 実行: `./LinguaGacha*.AppImage`
+
+### Android (Termux)
+Webベースのアーキテクチャのおかげで、Androidデバイス上のTermuxでLinguaGachaサービスを直接実行し、スマートフォンのブラウザで使用することができます：
+1. F-Droidから [Termux](https://f-droid.org/packages/com.termux/) をダウンロードしてインストールします。
+2. Termuxを開き、必要な依存関係（Node.js と Git）をインストールします：
+   ```bash
+   pkg update && pkg upgrade
+   pkg install git nodejs
+   ```
+3. このプロジェクトのコードをクローンし、ディレクトリに入ります：
+   ```bash
+   git clone https://github.com/neavo/LinguaGacha.git
+   cd LinguaGacha
+   ```
+4. 依存関係をインストールし、開発サーバーを起動します：
+   ```bash
+   npm install
+   npm run dev
+   ```
+5. 起動が完了したら、スマートフォンのブラウザでターミナルに出力されたローカルアドレス（通常は `http://127.0.0.1:5173`）にアクセスして使用します。
+
 ## 特別なお知らせ ⚠️
 - 翻訳中に [LinguaGacha](https://github.com/neavo/LinguaGacha) を使用する場合は、作品の情報やリリースページの目立つ場所に明確な帰属を含めてください！
 - 商業活動や利益を伴うプロジェクトの場合は、[LinguaGacha](https://github.com/neavo/LinguaGacha) を使用する前に、著者に連絡して許可を得てください！
@@ -31,34 +70,6 @@
 - 同種のアプリケーションの中で最強のスタイルとコード保持能力、後工程の作業量を大幅に削減、字幕埋め込み（内嵌字幕）作成に最適
   - `.md` `.ass` `.epub` 形式はほぼすべての元のスタイルを保持可能
   - 大部分の `WOLF`、`RenPy`、`RPGMaker`、`Kirikiri` エンジンゲームは手作業なしで、即翻訳即プレイ可能
-
-## ワークフロー 🛸
-- [リリースページ](https://github.com/neavo/LinguaGacha/releases) からアプリケーションをダウンロード
-  - Windows:
-    - CPU の種類に応じて `*_Windows_x64.zip` または `*_Windows_arm64.zip` をダウンロード
-    - 解凍して `app.exe` をダブルクリックして起動
-  - macOS:
-    - CPU の種類に応じて `*_macOS_x64.dmg` または `*_macOS_arm64.dmg` をダウンロード
-    - アプリケーションフォルダにドラッグし、まだ起動しないでください
-    - ターミナルを開き、`sudo xattr -rd com.apple.quarantine /Applications/LinguaGacha.app` と入力して Enter を押してください
-    - システムパスワードを入力し、ターミナルを閉じると、通常通り起動できます
-  - Linux:
-    - CPU の種類に応じて `*_Linux_x64.AppImage` または `*_Linux_arm64.AppImage` をダウンロード
-    - `chmod +x LinguaGacha*.AppImage` で実行権限を付与
-    - `./LinguaGacha*.AppImage` を実行
-- 信頼できるAIモデルインターフェースを取得（以下のいずれかを選択）：
-  - [ [Local API](https://github.com/neavo/OneClickLLAMA) ] (無料、8GB以上のVRAM GPUが必要、Nvidia推奨)
-  - [ [DeepSeek API](https://github.com/neavo/LinguaGacha/wiki/DeepSeek) ] (最安、高速、高品質、NO-GPU)
-- ソーステキストを準備：
-  - `字幕`/`電子書籍`は通常、前処理が不要
-  - `ゲームテキスト`は特定のゲームエンジンに適したツールを使用して抽出が必要
-- アプリケーションを起動：
-  - `翻訳するファイル` をページにドラッグしてプロジェクトを作成
-  - `モデル管理` で使用するモデルを設定
-  - `基本設定` でソース言語、ターゲット言語などの必要な情報を設定
-  - `AGENT` でモデルを選択し、用語集を自動抽出
-  - `ワークベンチ` でモデルを選択し、`翻訳` を実行して翻訳を完了
-  - Enjoy!
 
 ## 使い方チュートリアル - English 📝
 - Overall
