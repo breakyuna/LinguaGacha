@@ -1,5 +1,3 @@
-
-
 <div align=center><img src="https://github.com/user-attachments/assets/cdf990fb-cf03-4370-a402-844f87b2fab8" width="256px;"></div>
 <div align=center><img src="https://img.shields.io/github/v/release/neavo/LinguaGacha"/>   <img src="https://img.shields.io/github/license/neavo/LinguaGacha"/>   <img src="https://img.shields.io/github/stars/neavo/LinguaGacha"/></div>
 <p align='center'>使用 AI 能力一键翻译 小说、游戏、字幕 等文本内容的次世代文本翻译器</p>
@@ -18,6 +16,45 @@
 
 > <img width="2570" height="1605" alt="02" src="https://github.com/user-attachments/assets/7f6d6556-d6b2-4fb1-b509-2d8272814290" />
 
+## 如何运行 🚀
+
+从 [发布页](https://github.com/neavo/LinguaGacha/releases) 下载适合您平台的版本即可直接运行，也支持在手机端借助 Termux 进行运行。
+
+### Windows
+- 根据 CPU 类型下载 `*_Windows_x64.zip` 或 `*_Windows_arm64.zip`
+- 解压后双击 `app.exe` 启动即可
+
+### macOS
+- 根据 CPU 类型下载 `*_macOS_x64.dmg` 或 `*_macOS_arm64.dmg`
+- 拖拽到应用程序文件夹，**先不要启动**
+- 打开终端输入 `sudo xattr -rd com.apple.quarantine /Applications/LinguaGacha.app` 然后回车
+- 输入系统密码，关闭终端，现在可以正常运行了
+
+### Linux
+- 根据 CPU 类型下载 `*_Linux_x64.AppImage` 或 `*_Linux_arm64.AppImage`
+- 添加执行权限：`chmod +x LinguaGacha*.AppImage`
+- 运行：`./LinguaGacha*.AppImage`
+
+### Android (Termux)
+得益于基于 Web 的架构，您可以直接在 Android 设备的 Termux 中运行 LinguaGacha 服务，并在手机浏览器中使用：
+1. 从 F-Droid 下载并安装 [Termux](https://f-droid.org/packages/com.termux/)。
+2. 打开 Termux 并安装必要的依赖（Node.js 与 Git）：
+   ```bash
+   pkg update && pkg upgrade
+   pkg install git nodejs
+   ```
+3. 克隆本项目代码并进入目录：
+   ```bash
+   git clone https://github.com/neavo/LinguaGacha.git
+   cd LinguaGacha
+   ```
+4. 安装依赖并启动开发服务器：
+   ```bash
+   npm install
+   npm run dev
+   ```
+5. 启动完成后，在手机浏览器中访问终端输出的本地地址（通常是 `http://127.0.0.1:5173`）即可使用。
+
 ## 特别说明 ⚠️
 - 如您在翻译过程中使用了 [LinguaGacha](https://github.com/neavo/LinguaGacha) ，请在作品信息或发布页面的显要位置进行说明！
 - 如您的项目涉及任何商业行为或者商业收益，在使用 [LinguaGacha](https://github.com/neavo/LinguaGacha) 前，请先与作者联系以获得授权！
@@ -30,34 +67,6 @@
 - 同类应用中最强的样式与代码保留能力，显著减少后期工作量，是制作内嵌汉化的最佳选择
   - `.md` `.ass` `.epub` 格式几乎可以保留所有原有样式
   - 大部分的 `WOLF`、`RenPy`、`RPGMaker`、`Kirikiri` 引擎游戏无需人工处理，即翻即玩
-
-## 基本流程 🛸
-- 从 [发布页](https://github.com/neavo/LinguaGacha/releases) 下载应用
-  - Windows:
-    - 根据 CPU 类型下载 `*_Windows_x64.zip` 或 `*_Windows_arm64.zip`
-    - 解压后双击 `app.exe` 启动
-  - macOS:
-    - 根据 CPU 类型下载 `*_macOS_x64.dmg` 或 `*_macOS_arm64.dmg`
-    - 拖拽到应用程序文件夹，先不要启动
-    - 打开终端输入 `sudo xattr -rd com.apple.quarantine /Applications/LinguaGacha.app` 然后回车
-    - 输入系统密码，关闭终端，可以正常运行了
-  - Linux:
-    - 根据 CPU 类型下载 `*_Linux_x64.AppImage` 或 `*_Linux_arm64.AppImage`
-    - 添加执行权限 `chmod +x LinguaGacha*.AppImage`
-    - 运行 `./LinguaGacha*.AppImage`
-- 获取一个可靠的 AI 大模型接口，建议选择其一：
-  - [ [本地接口](https://github.com/neavo/OneClickLLAMA) ]，免费，需至少 8G 显存的独立显卡，Nvidia 显卡为佳
-  - [ [DeepSeek](https://github.com/neavo/LinguaGacha/wiki/DeepSeek) ]，最便宜，速度快，质量高，无显卡要求
-- 准备要翻译的文本
-  - `字幕`、`电子书` 等一般不需要预处理
-  - `游戏文本` 需要根据游戏引擎选择合适的工具进行提取
-- 启动应用
-  - 将 `待翻译的文件` 拖到页面上创建项目
-  - 在 `模型管理` 中设置要使用的模型
-  - 在 `基础设置` 中设置原文语言、译文语言等必要信息
-  - 在 `AGENT` 中选择模型，完成术语表的自动提取
-  - 在 `工作台` 中选择模型并执行 `翻译` 完成翻译
-  - Enjoy!
 
 ## 使用教程 📝
 - 综合
