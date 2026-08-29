@@ -1,7 +1,7 @@
+export type ResolvedThemeMode = "light" | "dark";
 import { ThemeProvider, useTheme } from "next-themes";
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
-import type { ResolvedThemeMode } from "@gui/bridge-types";
 
 const THEME_STORAGE_KEY = "lg-theme-mode"; // 跨窗口持久化契约，由 next-themes 负责同步
 const FONT_FAMILY_STORAGE_KEY = "lg-base-font-mode"; // 沿用 enabled / disabled 存储值，避免迁移既有偏好
@@ -76,8 +76,7 @@ function AppearanceStateProvider({ children }: { children: ReactNode }): JSX.Ele
 
   useEffect(() => {
     // 宿主只消费最终明暗状态，不承担 system 偏好的解析和持久化。
-    window.desktopApp.setTitleBarTheme(resolved_theme);
-  }, [resolved_theme]);
+      }, [resolved_theme]);
 
   const value: AppearanceContextValue = {
     theme_preference,

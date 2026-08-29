@@ -1,6 +1,6 @@
 import type { MermaidConfig } from "mermaid";
 
-import type { ResolvedThemeMode } from "@gui/bridge-types";
+export type ResolvedThemeMode = "light" | "dark";
 
 const MERMAID_RENDER_CACHE_SIZE = 32;
 const MERMAID_NODE_RADIUS = 4;

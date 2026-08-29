@@ -1,4 +1,5 @@
-import { useEffect, useEffectEvent } from "react";
+import { useEffect } from "react";
+import { useEventCallback as useEffectEvent } from "./use-event-callback";
 
 import {
   is_action_shortcut_event,

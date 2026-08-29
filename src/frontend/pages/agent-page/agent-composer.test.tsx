@@ -752,7 +752,7 @@ describe("AgentComposer", () => {
           TooltipProvider,
           null,
           <AgentComposer
-            ref={options.composer_ref}
+            ref={options.composer_ref as any}
             presentation={options.presentation}
             inline_role={options.inline_role}
             on_cancel_edit={options.on_cancel_edit}

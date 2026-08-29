@@ -1,4 +1,5 @@
 import { afterEach } from "vitest";
+import fs from "node:fs";
 
 (
   globalThis as typeof globalThis & {
@@ -12,3 +13,19 @@ afterEach(() => {
   }
   document.body.innerHTML = "";
 });
+
+(fs as any).mkdtempDisposableSync = function (prefix: string) {
+  const dir = fs.mkdtempSync(prefix);
+  return {
+    [Symbol.dispose]: () => {
+      try {
+        fs.rmSync(dir, { recursive: true, force: true });
+      } catch (e) {
+        // ignore
+      }
+    },
+    toString: () => dir,
+    valueOf: () => dir,
+    path: dir, // Add path property specifically for compatibility where temp_dir.path is used
+  };
+};

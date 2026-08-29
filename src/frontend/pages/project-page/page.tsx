@@ -980,22 +980,21 @@ export function ProjectPage(_props: ProjectPageProps): JSX.Element {
    * 打开系统文件选择器，保留多选结果的完整路径集合。
    */
   async function handle_select_source_file(): Promise<void> {
-    const result = await window.desktopApp.pickProjectSourceFilePath();
-    const selected_path = result.paths[0] ?? null;
-    if (result.canceled || selected_path === null) {
+        const selected_path = [][0] ?? null;
+    if (selected_path === null) {
       return;
     }
 
-    await handle_select_source_paths(result.paths);
+    await handle_select_source_paths([]);
   }
 
   /**
    * 打开系统目录选择器，目录模式只返回单个根路径。
    */
   async function handle_select_source_folder(): Promise<void> {
-    const result = await window.desktopApp.pickProjectSourceDirectoryPath();
-    const selected_path = result.paths[0] ?? null;
-    if (result.canceled || selected_path === null) {
+    throw new Error("Not supported in web mode"); // const result = await window.desktopApp.pickProjectSourceDirectoryPath();
+    const selected_path = [][0] ?? null;
+    if (selected_path === null) {
       return;
     }
 
@@ -1006,9 +1005,8 @@ export function ProjectPage(_props: ProjectPageProps): JSX.Element {
    * 打开系统工程文件选择器并进入预览流程。
    */
   async function handle_select_project_file(): Promise<void> {
-    const result = await window.desktopApp.pickProjectFilePath();
-    const selected_path = result.paths[0] ?? null;
-    if (result.canceled || selected_path === null) {
+        const selected_path = [][0] ?? null;
+    if (selected_path === null) {
       return;
     }
 
@@ -1097,8 +1095,8 @@ export function ProjectPage(_props: ProjectPageProps): JSX.Element {
     const save_mode = settings_snapshot.project_save_mode;
 
     if (save_mode === "MANUAL") {
-      const result = await window.desktopApp.pickProjectSavePath(default_file_name);
-      return result.canceled ? null : (result.paths[0] ?? null);
+      throw new Error("Not supported in web mode"); // const result = await window.desktopApp.pickProjectSavePath(default_file_name);
+      return null;
     }
 
     if (save_mode === "SOURCE") {
@@ -1108,9 +1106,9 @@ export function ProjectPage(_props: ProjectPageProps): JSX.Element {
 
     let fixed_directory = settings_snapshot.project_fixed_path;
     if (fixed_directory === "") {
-      const result = await window.desktopApp.pickFixedProjectDirectory();
-      const selected_path = result.paths[0] ?? null;
-      if (result.canceled || selected_path === null) {
+      throw new Error("Not supported in web mode"); // const result = await window.desktopApp.pickFixedProjectDirectory();
+      const selected_path = [][0] ?? null;
+      if (selected_path === null) {
         return null;
       }
 

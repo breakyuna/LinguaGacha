@@ -10,7 +10,7 @@ type AppTitlebarProps = {
 
 export function AppTitlebar(props: AppTitlebarProps): JSX.Element {
   const { state, toggleSidebar } = useSidebar();
-  const shell_info = window.desktopApp.shell; // 标题栏安全区统一来自 preload 暴露的桌面壳层信息，避免渲染层再猜平台细节
+  const shell_info: any = { titleBarHeight: 0, titleBarSafeAreaStart: 0, titleBarSafeAreaEnd: 0, titleBarControlSide: "right" };
   const SidebarToggleIcon = state === "expanded" ? PanelLeftClose : PanelLeftOpen;
 
   return (

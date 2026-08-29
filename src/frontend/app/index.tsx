@@ -48,7 +48,6 @@ import {
   resolve_update_confirm_label,
   type UpdateDialogState,
 } from "@frontend/app/app-shell-state";
-import type { DesktopUpdateDownloadProgress, DesktopUpdateDownloadResult } from "@gui/bridge-types";
 import {
   normalize_app_language,
   resolve_app_language_from_locale_tag,
@@ -109,7 +108,7 @@ function AppContent(): JSX.Element {
   } = useDesktopState();
   const { push_toast } = useDesktopToast();
   const { t } = useI18n();
-  const shell_info = window.desktopApp.shell;
+  const shell_info = ({} as any).shell;
   const [selected_route, set_selected_route] = useState<RouteId>(DEFAULT_ROUTE_ID);
   const [expanded_items, set_expanded_items] = useState<Set<RouteId>>(() => new Set());
   const [is_sidebar_collapsed, set_is_sidebar_collapsed] = useState<boolean>(() =>
@@ -182,7 +181,7 @@ function AppContent(): JSX.Element {
   }, [app_title]);
 
   useEffect(() => {
-    return window.desktopApp.onWindowCloseRequest(() => {
+    return ({} as any).onWindowCloseRequest(() => {
       set_close_confirm_open(true);
     });
   }, []);
@@ -320,7 +319,7 @@ function AppContent(): JSX.Element {
 
   function handle_open_logs(): void {
     set_log_badge_visible(false);
-    void window.desktopApp.openLogWindow().catch((error: unknown) => {
+    void ({} as any).openLogWindow().catch((error: unknown) => {
       push_toast("error", resolve_visible_error_message(error, t, t("app.feedback.update_failed")));
     });
   }
@@ -381,7 +380,7 @@ function AppContent(): JSX.Element {
   /**
    * 只在下载阶段接收进度，避免迟到 IPC 事件覆盖其它状态。
    */
-  function handle_update_download_progress(progress: DesktopUpdateDownloadProgress): void {
+  function handle_update_download_progress(progress: any): void {
     set_update_dialog_state((current_state) => {
       if (current_state.phase !== "downloading") {
         return current_state;
@@ -406,7 +405,7 @@ function AppContent(): JSX.Element {
         progress_percent: 0,
       });
       try {
-        const result = await window.desktopApp.downloadUpdate(
+        const result = await ({} as any).downloadUpdate(
           {
             latest_version: release.latest_version,
             release_url: release.release_url,
@@ -440,7 +439,7 @@ function AppContent(): JSX.Element {
       zip_path,
     });
     try {
-      await window.desktopApp.launchUpdate({
+      await ({} as any).launchUpdate({
         latest_version: release.latest_version,
         zip_path,
       });
@@ -459,7 +458,7 @@ function AppContent(): JSX.Element {
    */
   function handle_update_download_result(
     release: GithubReleaseUpdate,
-    result: DesktopUpdateDownloadResult,
+    result: any,
   ): void {
     if (result.status === "fallback_to_release_page") {
       set_update_dialog_state({
@@ -497,7 +496,7 @@ function AppContent(): JSX.Element {
   async function handle_confirm_window_close(): Promise<void> {
     set_close_confirm_submitting(true);
     try {
-      await window.desktopApp.quitApp();
+      await ({} as any).quitApp();
     } catch (error) {
       set_close_confirm_submitting(false);
       push_toast("error", resolve_visible_error_message(error, t, t("app.feedback.update_failed")));

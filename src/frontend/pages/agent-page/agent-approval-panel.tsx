@@ -1,4 +1,5 @@
-import { useEffect, useEffectEvent } from "react";
+import { useEffect } from "react";
+import { useEventCallback as useEffectEvent } from "../../widgets/interactions/use-event-callback";
 import { ChevronDown, ShieldQuestionMark } from "lucide-react";
 
 import type { AgentPendingWriteSummary } from "@shared/agent";
